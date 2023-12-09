@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.4.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.1.1/slick/slick-theme.css">
+  <link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+
+
+  <div class="slick-slider">
+    <div class="element element-1" data-video-id="uyhzCBEGaBY">
+      <iframe width="320" height="180"
+        src="https://www.youtube.com/embed/uyhzCBEGaBY?si=pxXMZb-TKRbiKKU5?ecver=2&enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-2" data-video-id="NhDYbskXRgc">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/NhDYbskXRgc?si=n4wicE863y41-ZE5?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-3" data-video-id="rfscVS0vtbw">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/rfscVS0vtbw?si=5tjseJ0DcJellTUn?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-4" data-video-id="LfaMVlDaQ24">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/LfaMVlDaQ24?si=uK0xgiLiYvwUh7TR?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-5" data-video-id="UU1WVnMk4E8">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/UU1WVnMk4E8?si=Z9q0S-cxKyOoxoZG?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-6" data-video-id="gyMwXuJrbJQ">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/gyMwXuJrbJQ?si=M12NDIoHroXNJArX?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-7" data-video-id="0CSyIBHQy9g">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/0CSyIBHQy9g?si=p-8dvBZsJzG3xXGP?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-8" data-video-id="BLl32FvcdVM">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/BLl32FvcdVM?si=1NUoSmPHCiZJJqIz?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-9" data-video-id="nu_pCVPKzTk">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/nu_pCVPKzTk?si=E5uDgJlRIdyl-5wc?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="element element-10" data-video-id="dX8396ZmSPk">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/dX8396ZmSPk?si=Ti1FvepyfjmpffDe?enablejsapi=1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let currentPlayingVideo = null;
+    $(".slick-slider").slick({
+      slidesToShow: 3,
+      infinite: true,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000
+  
+    });
+    function onPlayerStateChange(event) {
+      if (currentPlayingVideo) {
+        currentPlayingVideo.target.pauseVideo();
+      }
+      if (event.data == YT.PlayerState.PLAYING) {
+        currentPlayingVideo = event;
+      }
+    }
+    $(".slick-prev").on("click", function () {
+      $(".slick-slider").slick("slickPrev");
+    });
+
+    $(".slick-next").on("click", function () {
+
+      $(".slick-slider").slick("slickNext");
+      $(".slick-slider").slick("pause");
+      if (currentPlayingVideo) {
+        currentPlayingVideo.target.pauseVideo();
+      }
+    });
+    function onYouTubeIframeAPIReady() {
+      $(".element").each(function (index, slide) {
+        let videoId = $(slide).attr('data-video-id');
+        slide.video = new YT.Player(slide, {
+          videoId: videoId,
+          events: {
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      });
+    }
+
+
+  </script>
+
+</body>
+
+</html>
